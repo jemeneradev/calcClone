@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Style from '../styles/FunctionKeys.css'
 
 function FKeyPad(props) {
     let addOnStyle;
@@ -8,29 +8,50 @@ function FKeyPad(props) {
     } else {
       addOnStyle = props.addOnStyle;
     }
-    let useStyle = `p-0 flex-grow-1 ${addOnStyle}`;
+    let useStyle = `${addOnStyle}`;
     return (
       <div id={props.id} className={useStyle} onClick={props.action}>
-        <div className="d-flex justify-content-center">{props.keypadName}</div>
+        <h2>{props.keypadName}</h2>
       </div>
     );
   }
   
+/*
+  const numNames = (num) => {
+    switch(num){
+        case 0: {
+            return ({id:'zero',name:`${num}`})
+        }
+        case 1: {
+          return ({id:'one',name:`${num}`})
+        }
+        case 2: {
+          return ({id:'two',name:`${num}`})
+        }
+    }
+}*/
+
   function CalcFunctions(props) {
     return (
-      <div className="d-flex flex-row">
+      <div class="function-keys-display">
         <FKeyPad
           id="clear"
-          addOnStyle="p-0 flex-grow-1 kdefault cbutton"
+          addOnStyle="kdefault cfbutton"
           keypadName="C"
           action={props.calcReset}
         ></FKeyPad>
-        <div className="p-0 flex-grow-1 kdefault cbutton">
-          <div className="d-flex justify-content-center ">-+</div>
-        </div>
-        <div className="p-0 flex-grow-1 kdefault cbutton">
-          <div className="d-flex justify-content-center">%</div>
-        </div>
+        <FKeyPad
+          id="toggle"
+          addOnStyle="kdefault cfbutton"
+          keypadName="-+"
+          action={null}
+        ></FKeyPad>
+         <FKeyPad
+          id="mod"
+          addOnStyle="kdefault cfbutton"
+          keypadName="%"
+          action={null}
+        ></FKeyPad>
       </div>
     );
   }

@@ -6,9 +6,9 @@ import OperatorKeys from './OperatorKeys'
 function KeyPad(props) {
     return (
       <div id="keypad" className="p-2 flex-fill">
-        <div className="d-flex justify-content-between flex-row">
-          <div id="main_pad" className="p-0 flex-fill" style={{ width: "200px" }}>
-            <div className="d-flex flex-column">
+        <div className="">
+          <div id="main_pad" className="" style={{ width: "200px" }}>
+            <div className="">
               <FunctionKeys calcReset={props.resetAcc}></FunctionKeys>
               <NumeralKeys append={props.appendToAcc}></NumeralKeys>
             </div>

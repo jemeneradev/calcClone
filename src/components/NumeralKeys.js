@@ -1,4 +1,5 @@
 import React from 'react';
+import Style from '../styles/NumeralKeys.css'
 
 function NKeyPad(props) {
     let addOnStyle;
@@ -7,96 +8,72 @@ function NKeyPad(props) {
     } else {
       addOnStyle = props.addOnStyle;
     }
-    let useStyle = `p-0 flex-grow-1 ${addOnStyle}`;
+    let useStyle = `${addOnStyle}`;
   
     return (
       <div
         id={props.id}
         className={useStyle}
         onClick={props.append.bind(this, props.keypadName)}
-      >
-        <div className="d-flex justify-content-center">{props.keypadName}</div>
+      ><h2>{props.keypadName}</h2>
       </div>
     );
   }
-  
+
+  const numNames = (num) => {
+      switch(num){
+          case 0: {
+              return ({id:'zero',name:`${num}`})
+          }
+          case 1: {
+            return ({id:'one',name:`${num}`})
+          }
+          case 2: {
+            return ({id:'two',name:`${num}`})
+          }
+          case 3: {
+            return ({id:'three',name:`${num}`})
+          }
+          case 4: {
+            return ({id:'four',name:`${num}`})
+          }
+          case 5: {
+            return ({id:'five',name:`${num}`})
+          }
+          case 6: {
+            return ({id:'six',name:`${num}`})
+          }
+          case 7: {
+            return ({id:'seven',name:`${num}`})
+          }
+          case 8: {
+            return ({id:'eight',name:`${num}`})
+          }
+          case 9: {
+            return ({id:'nine',name:`${num}`})
+          }
+          case -1: {
+            return ({id:'decimal',name:`.`})
+          }
+      }
+  }
+
   function Numericals(props) {
+    const keys = [7,8,9,4,5,6,1,2,3,0,-1].map(key => {
+        const keyInfo = numNames(key)
+        const extraStyle = (key === 0) ? "kdefault nbutton nbutton-extra-long" : "kdefault nbutton"
+        return (
+        <NKeyPad
+            id={keyInfo.id}
+            addOnStyle={extraStyle}
+            keypadName={keyInfo.name}
+            append={props.append}
+            ></NKeyPad>
+        )
+    })
     return (
-      <div className="p-0 flex-fill">
-        <div className="d-flex flex-row">
-          <NKeyPad
-            id="seven"
-            addOnStyle="kdefault nbutton"
-            keypadName="7"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="eight"
-            addOnStyle="kdefault nbutton"
-            keypadName="8"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="nine"
-            addOnStyle="kdefault nbutton"
-            keypadName="9"
-            append={props.append}
-          ></NKeyPad>
-        </div>
-        <div className="d-flex flex-row">
-          <NKeyPad
-            id="four"
-            addOnStyle="kdefault nbutton"
-            keypadName="4"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="five"
-            addOnStyle="kdefault nbutton"
-            keypadName="5"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="six"
-            addOnStyle="kdefault nbutton"
-            keypadName="6"
-            append={props.append}
-          ></NKeyPad>
-        </div>
-        <div className="d-flex flex-row">
-          <NKeyPad
-            id="one"
-            addOnStyle="kdefault nbutton"
-            keypadName="1"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="two"
-            addOnStyle="kdefault nbutton"
-            keypadName="2"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="three"
-            addOnStyle="kdefault nbutton"
-            keypadName="3"
-            append={props.append}
-          ></NKeyPad>
-        </div>
-        <div className="d-flex flex-row">
-          <NKeyPad
-            id="zero"
-            addOnStyle="kdefault nbutton"
-            keypadName="0"
-            append={props.append}
-          ></NKeyPad>
-          <NKeyPad
-            id="decimal"
-            addOnStyle="kdefault nbutton"
-            keypadName="."
-            append={props.append}
-          ></NKeyPad>
-        </div>
+      <div className="numeral-keys-display">
+          {keys}
       </div>
     );
   }

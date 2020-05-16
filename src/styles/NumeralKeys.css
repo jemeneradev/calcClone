@@ -1,0 +1,26 @@
+.numeral-keys-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px 1px;
+    background-color: black;
+}
+.nbutton {
+    width: 100%;
+    background-color: gray;
+    color: white;
+}
+.nbutton h2 {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Style for Extra long Zero button*/
+.nbutton-extra-long {
+    grid-column: 1 / 3;
+    justify-self: left;
+}
+.nbutton-extra-long h2 {
+    position: relative;
+    left: -25%;
+}
