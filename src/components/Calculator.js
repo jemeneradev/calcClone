@@ -2,6 +2,8 @@ import React from 'react';
 import Display from './Display'
 import KeyPad from './KeyPad'
 
+import Style from '../styles/Calculator.css'
+
 function Calculator(props) {
     const [accBuf, setAccBuf] = React.useState("");
     const [formula, setFormula] = React.useState("");
@@ -169,7 +171,7 @@ function Calculator(props) {
     };
 
     return (
-      <div id="calculator" className="d-flex flex-column">
+      <div id="calculator">
         <Display
           formula={formula}
           acc={accBuf}

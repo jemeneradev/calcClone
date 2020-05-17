@@ -3,17 +3,17 @@ import FunctionKeys from './FunctionKeys'
 import NumeralKeys from './NumeralKeys'
 import OperatorKeys from './OperatorKeys'
 
+import Style from '../styles/KeyPad.css'
+
 function KeyPad(props) {
     return (
-      <div id="keypad" className="p-2 flex-fill">
-        <div className="">
-          <div id="main_pad" className="" style={{ width: "200px" }}>
-            <div className="">
+      <div id="keypad">
+        <div id="simple-calc">
+          <div id="main_pad">
               <FunctionKeys calcReset={props.resetAcc}></FunctionKeys>
               <NumeralKeys append={props.appendToAcc}></NumeralKeys>
-            </div>
           </div>
-          <div id="operations" className="p-0 flex-fill">
+          <div id="operations">
             <OperatorKeys
               append={props.appendToFormula}
               compute={props.computeResults}

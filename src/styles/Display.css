@@ -1,0 +1,28 @@
+#calcMonitor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+
+    background-color: #3b3c3c;
+
+    width: 260px;
+    height: 100px;
+
+    padding: 10px;
+}
+
+#calcMonitor h2 {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+}
+
+#display h2 {
+    font-size: 2em;
+    color: burlywood;
+}
+
+#input {
+    font-size: 1.5em;
+}

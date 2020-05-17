@@ -1,4 +1,5 @@
 import React from 'react';
+import Style from '../styles/Display.css'
 
 function Display(props) {
     let display =
@@ -9,18 +10,13 @@ function Display(props) {
       display = "0";
     }
     return (
-      <div id="calcMonitor" className="p-3 flex-fill">
-        <div
-          className="d-flex justify-content-between flex-column"
-          style={{ height: "80px" }}
-        >
-          <div id="display" class="d-flex flex-row-reverse">
-            {display}
+      <div id="calcMonitor">
+          <div id="display">
+            <h2>{display}</h2>
           </div>
-          <div id="input" class="d-flex flex-row-reverse">
-            {props.acc}
+          <div id="input">
+            <h2>{props.acc}</h2>
           </div>
-        </div>
       </div>
     );
   }

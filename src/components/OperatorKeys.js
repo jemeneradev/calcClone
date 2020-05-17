@@ -7,24 +7,24 @@ function OKeyPad(props) {
     } else {
       addOnStyle = props.addOnStyle;
     }
-    let useStyle = `p-0 flex-grow-1 ${addOnStyle}`;
+    let useStyle = `${addOnStyle}`;
     return (
       <div
         id={props.id}
         className={useStyle}
         onClick={props.append.bind(this, props.keypadName)}
       >
-        <div className="d-flex justify-content-center">{props.keypadName}</div>
+        <h2>{props.keypadName}</h2>
       </div>
     );
   }
   function Operations(props) {
     return (
-      <div className="p-0 flex-fill">
+      <div className="operator-key-display">
         <OKeyPad
           id="divide"
           addOnStyle="kdefault obutton"
-          keypadName="/"
+          keypadName="÷"
           append={props.append}
         ></OKeyPad>
         <OKeyPad
