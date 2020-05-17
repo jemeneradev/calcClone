@@ -23,7 +23,7 @@
 
 .operator-key-display :last-child {
     -webkit-border-bottom-right-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottom-right: 4px;
     border-bottom-right-radius: 4px;
 }
 

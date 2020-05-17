@@ -33,7 +33,7 @@ function FKeyPad(props) {
 
   function CalcFunctions(props) {
     return (
-      <div class="function-keys-display">
+      <div className="function-keys-display">
         <FKeyPad
           id="clear"
           addOnStyle="kdefault cfbutton"

@@ -65,6 +65,7 @@ function NKeyPad(props) {
         return (
         <NKeyPad
             id={keyInfo.id}
+            key={keyInfo.id}
             addOnStyle={extraStyle}
             keypadName={keyInfo.name}
             append={props.append}
